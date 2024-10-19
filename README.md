@@ -22,12 +22,18 @@ operator_options =
       end
 ```
 
+
+
+```
 @admin_statuses UserStatus.Utils.values()
                   |> Enum.filter(fn status -> status != :BANNED end)
                   |> Enum.map(&%{label: to_string(&1), value: to_string(&1)})
+```
+
+```
   @admin_statuses for s <- UserStatus.Utils.values(), s != :BANNED do
                     %{label: to_string(s), value: to_string(s)}
                   end
 
-
+```
 # elixir-best-pracice
